@@ -213,6 +213,10 @@ const StoryComponent = () => {
             // className="absolute bottom-40 left-0"
             height={78}
             layout="responsive"
+            style={{
+              height: "auto",
+              width: "auto"
+            }}
           />
         </animated.div>
       </div>

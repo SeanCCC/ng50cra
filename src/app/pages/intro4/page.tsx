@@ -101,12 +101,16 @@ function StoryComponent() {
         <animated.div style={{...photoAnimation, "height": "100px"}} className="w-full flex items-center justify-center relative">
           <Image
             className="z-10 absolute left-0"
-            style={{top: "11px"}}
             loading="eager"
             width={0}
             height={78}
             layout="responsive"
             src="/images/wave2.png"
+            style={{
+              height: "auto",
+              width: "auto",
+              top: "11px"
+          }}
             alt=""
           />  
           <Image

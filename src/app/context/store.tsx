@@ -2,8 +2,8 @@
 'use client';
 
 import { createContext, useContext, Dispatch, SetStateAction, useState, useEffect } from "react";
-// import * as liff from '@/app/liff';
-// import { authWithLine } from "@/common/firebaseAuth";
+import * as liff from '@/app/liff';
+import { authWithLine } from "@/common/firebaseAuth";
 import { useUpsertData } from "@/hooks/useUpsertData";
 
 interface IActor {
@@ -83,44 +83,44 @@ export const GlobalContextProvider = ({ children }) => {
     const [bgAudio, setBgAudio] = useState<HTMLAudioElement | null>(null);
     const [fading, setFading] = useState<boolean>(false);
 
-    // const { upsertUser } = useUpsertData()
-    // console.log(userId, username)
+    const { upsertUser } = useUpsertData()
+    console.log(userId, username)
 
-    // useEffect(() => {
-    //     async function initSystem() {
-    //         await liff.init();
-    //         const [idToken, profile] = await Promise.all([liff.getIDToken(), liff.getProfile()]);
-    //         if (!idToken) throw new Error('ID token not found');
-    //         await authWithLine(idToken);
-    //         setUserId(profile.userId)
-    //         setUserName(profile.displayName)
-    //         await upsertUser(profile.userId, profile.displayName)
-    //     }
+    useEffect(() => {
+        async function initSystem() {
+            await liff.init();
+            const [idToken, profile] = await Promise.all([liff.getIDToken(), liff.getProfile()]);
+            if (!idToken) throw new Error('ID token not found');
+            await authWithLine(idToken);
+            setUserId(profile.userId)
+            setUserName(profile.displayName)
+            await upsertUser(profile.userId, profile.displayName)
+        }
 
-    //     try {
-    //         initSystem();
-    //     } catch (error) {
-    //         console.error(error);
-    //     }
+        try {
+            initSystem();
+        } catch (error) {
+            console.error(error);
+        }
 
-    //     window.oncontextmenu = function (event) {
-    //         event.preventDefault();
-    //         event.stopPropagation();
-    //         return false;
-    //     };
+        window.oncontextmenu = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
 
-    //     // ref: https://tools.wingzero.tw/article/sn/1463
-    //     const windowHeight = () => {
-    //         const doc = document.documentElement
-    //         doc.style.setProperty('--window-height', `${window.innerHeight}px`)
-    //     }
-    //     windowHeight()
-    //     window.addEventListener('resize', windowHeight)
+        // ref: https://tools.wingzero.tw/article/sn/1463
+        const windowHeight = () => {
+            const doc = document.documentElement
+            doc.style.setProperty('--window-height', `${window.innerHeight}px`)
+        }
+        windowHeight()
+        window.addEventListener('resize', windowHeight)
 
-    //     return () => {
-    //         window.removeEventListener('resize', windowHeight)
-    //     }
-    // }, [])
+        return () => {
+            window.removeEventListener('resize', windowHeight)
+        }
+    }, [])
     return (
         <GlobalContext.Provider
             value={{

@@ -18,6 +18,8 @@
     "child_process": "^1.0.2",
     "craco": "^0.0.3",
     "d3-ease": "^3.0.1",
+    "env-cmd": "^10.1.0",
+    "firebase": "^10.5.2",
     "lottie-react": "^2.4.0",
     "p-limit": "^4.0.0",
     "postcss": "^8.4.31",
@@ -30,12 +32,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "env-cmd -f ./.env.local craco start",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
     "build-image": "docker build -t my-react-app .",
-    "run-image": "docker run -d -p 80:80 my-react-app"
+    "run-container": "docker run -d -p 80:80 my-react-app"
   },
   "eslintConfig": {
     "extends": [

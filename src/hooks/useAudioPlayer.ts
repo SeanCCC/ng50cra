@@ -69,8 +69,8 @@ function useAudioPlayer({ src, autoPlay = false, delay = 0, onFinish }: AudioPla
           audio.play()
           audio.pause()
           await sleep(delay)
-          audio.src = src
         }
+        audio.src = src
         audio.play().catch(error => {
           console.error('Audio playback failed:', error);
         });

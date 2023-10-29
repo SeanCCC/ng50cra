@@ -53,11 +53,206 @@ const OptionRight = ({color="#fff"}) => (
   </svg>
 )
 
+const useSerialAnimation = (delay) => {
+  const a0 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 0 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a1 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 1 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a2 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 2 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a3 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 3 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a4 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 4 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a5 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 5 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a6 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 6 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a7 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 7 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a8 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 8 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a9 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 9 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a10 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 10 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a11 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 11 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a12 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 12 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a13 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 13 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a14 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 14 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a15 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 15 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a16 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 16 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a17 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 17 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a18 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 18 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a19 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 19 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a20 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 20 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a21 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 21 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a22 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 22 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a23 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 23 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a24 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 24 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a25 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 25 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  const a26 =  useSpring({
+    config: { duration: 600 },
+    from: { opacity: 0, filter: 'blur(8px)' },
+    to: { opacity: 1, filter: 'blur(0px)' },
+    delay: delay + 26 * 60  // 增加一個基於字符位置的小延遲
+  });
+
+  return [ a0, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26 ]
+}
+
 const FadeInText = ({ text, delay = 0, leftImageSrc, rightImageSrc, award: _award }) => {
   const items = [leftImageSrc, ...text.split(''), rightImageSrc];
   const { award, setAward } = useGlobalContext()
 
   const selected = (award?.actor??"") === _award.actor
+  
+  const animations = useSerialAnimation(delay)
   
   return (
     <div
@@ -65,16 +260,10 @@ const FadeInText = ({ text, delay = 0, leftImageSrc, rightImageSrc, award: _awar
       style={{ display: 'flex', alignItems: 'center', color: selected ? 'White' : '#F92C16', ...optionStyle }}
     >
       {items.map((item, index) => {
-        const style = useSpring({
-          config: { duration: 600 },
-          from: { opacity: 0, filter: 'blur(8px)' },
-          to: { opacity: 1, filter: 'blur(0px)' },
-          delay: delay + index * 60  // 增加一個基於字符位置的小延遲
-        });
 
         if (index === 0) {
           return (
-            <animated.div key="leftImage" style={style} className="pr-2">
+            <animated.div key="leftImage" style={animations[index]} className="pr-2">
               <OptionLeft color={selected ? 'White' : '#F92C16'}/>
             </animated.div>
           );
@@ -82,14 +271,14 @@ const FadeInText = ({ text, delay = 0, leftImageSrc, rightImageSrc, award: _awar
         
         if (index === items.length - 1) {
           return (
-            <animated.div key="rightImage" style={style} className="pl-2">
+            <animated.div key="rightImage" style={animations[index]} className="pl-2">
               <OptionRight color={selected ? 'White' : '#F92C16'}/>
             </animated.div>
           );
         }
 
         return (
-          <animated.span key={index} style={style}>
+          <animated.span key={index} style={animations[index]}>
             {item}
           </animated.span>
         );
@@ -103,9 +292,6 @@ export default function End3() {
   const { firstSelected, secondSelected, thirdSelected, award } = useGlobalContext();
   const [fading, setFading] = useState(false);
   const { saveAward } = useUpsertData()
-
-  if(firstSelected === null || secondSelected === null || thirdSelected === null) return null
-  console.log({firstSelected, secondSelected, thirdSelected, award})
 
   const firstAward = getAwardOption(firstSelected?.name??"")
   const secondAward = getAwardOption(secondSelected?.name??"")

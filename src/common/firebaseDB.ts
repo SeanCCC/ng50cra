@@ -4,11 +4,11 @@ import { getUserInitData } from '@common/user';
 import { setDoc, doc, updateDoc, serverTimestamp, Timestamp, getDoc } from "firebase/firestore";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
-if(!process.env.NEXT_PUBLIC_FIREBASE_USERS_COLLECTION_NAME) {
+if(!process.env.REACT_APP_PUBLIC_FIREBASE_USERS_COLLECTION_NAME) {
   throw new Error('NEXT_PUBLIC_USER_COLLECTION_NAME not found');
 }
 
-const userCollection = process.env.NEXT_PUBLIC_FIREBASE_USERS_COLLECTION_NAME
+const userCollection = process.env.REACT_APP_PUBLIC_FIREBASE_USERS_COLLECTION_NAME
 
 export async function initUser(userId: string, username: string) {
   const userRef = doc(db, userCollection, userId);

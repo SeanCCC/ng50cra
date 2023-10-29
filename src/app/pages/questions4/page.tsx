@@ -118,6 +118,10 @@ const StoryComponent = () => {
           width={0}
           height={78}
           layout="responsive"
+          style={{
+            height: "auto",
+            width: "auto"
+          }}
         />
       </div>
   );

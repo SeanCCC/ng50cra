@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 import {PagesRouters} from "@/app/pages/layout"
 import { GlobalContextProvider } from '@/app/context/store';
 import { AudioProvider } from "@/app/context/audioStore"
@@ -15,6 +15,9 @@ function App() {
             <Switch>
               <Route path="/pages" component={PagesRouters} />
               {/* 若有其他路由可以在此加入 */}
+              <Route path="*">
+                <Redirect to="/pages/loading" />
+              </Route>
             </Switch>
           </AudioProvider>
         </GlobalContextProvider>
