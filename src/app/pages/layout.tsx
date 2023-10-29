@@ -6,9 +6,11 @@ export default function Layout({
 }: {
   children: React.ReactNode
 }) {
-    return <BackgroundMusic>
+  return <section>
+    <BackgroundMusic>
       <BackgroundAnimation>
         {children}
       </BackgroundAnimation>
     </BackgroundMusic>
+  </section>
 }

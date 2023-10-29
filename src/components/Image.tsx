@@ -17,9 +17,10 @@ interface ImageProps {
   objectPosition?: string;
   onLoad?: () => void;
   onError?: () => void;
+  className?: string;
 }
 
-const Image = ({ src, alt, width, height, objectFit, objectPosition, ...restProps }: ImageProps) => {
+const Image = ({ src, alt, width, height, objectFit, objectPosition, className, ...restProps }: ImageProps) => {
   const style: React.CSSProperties = {};
 
   if (objectFit) {
@@ -30,7 +31,7 @@ const Image = ({ src, alt, width, height, objectFit, objectPosition, ...restProp
     style.objectPosition = objectPosition;
   }
 
-  return <img src={src} alt={alt} width={width} height={height} style={style} {...restProps} />;
+  return <img className={className} src={src} alt={alt} width={width} height={height} style={style} {...restProps} />;
 };
 
 export default Image;

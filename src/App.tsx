@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Loading from "./app/pages/loading/page";
+import Loading from "@/app/pages/loading/page"
 import { GlobalContextProvider } from '@/app/context/store';
 import { AudioProvider } from "@/app/context/audioStore"
 

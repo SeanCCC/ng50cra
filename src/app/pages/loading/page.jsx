@@ -3,26 +3,27 @@
 import Lottie from 'lottie-react';
 import React, { useState, useEffect } from 'react';
 import {LoadingLottie}  from "@/assets/lottie"
+import { useRouter } from '@/hooks/useLocation';
 import useResourcePreload from "@/hooks/useResourcePreload"
 import FadedFragment  from "@/components/FadedFragment"
 import preLoadList from "@/common/preload.json"
 
 export default function Loading() {
   const progress = useResourcePreload(preLoadList, 100)
-  // const router = useRouter(); 
+  const router = useRouter();
   const [fading, setFading] = useState(false);
 
 
   useEffect(() => {
-    if (progress >= 1000) {
+    if (progress >= 100) {
       setFading(true)
     }
   }, [progress]);
 
   return (
-    <div className="flex h-full flex-col items-center justify-center bg-black">
+    <div className="flex h-100dvh flex-col items-center justify-center bg-black">
       <FadedFragment
-        onNextPage={() => {}}
+        onNextPage={() => router.push('/pages/intro1')}
         fading={fading}
       >
         <Lottie
