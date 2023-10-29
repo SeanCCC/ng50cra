@@ -62,15 +62,20 @@ function useAudioPlayer({ src, autoPlay = false, delay = 0, onFinish }: AudioPla
   // 开始播放函数
   const play = async (delay=0) => {
     if (!playing && audio) {
-      setPlaying(true);
-      audio.src = "/audio/30-seconds-of-silence.mp3"
-      audio.play()
-      await sleep(delay)
-      audio.src = src
-      audio.play().catch(error => {
-        console.error('Audio playback failed:', error);
-      });
-      setEnded(false)
+      try{
+        setPlaying(true);
+        if(delay > 0) {
+          audio.src = "/audio/30-seconds-of-silence.mp3"
+          audio.play()
+          audio.pause()
+          await sleep(delay)
+          audio.src = src
+        }
+        audio.play().catch(error => {
+          console.error('Audio playback failed:', error);
+        });
+        setEnded(false)
+      } catch(error) {}
     }
   };
 

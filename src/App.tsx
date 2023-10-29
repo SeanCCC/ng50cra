@@ -1,31 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Loading from "@/app/pages/loading/page"
+import {PagesRouters} from "@/app/pages/layout"
 import { GlobalContextProvider } from '@/app/context/store';
 import { AudioProvider } from "@/app/context/audioStore"
 
 import './App.css';
 
-function PagesRouters() {
-  return (
-    <GlobalContextProvider>
-      <AudioProvider>
-        <Loading/>
-      </AudioProvider>
-    </GlobalContextProvider>
-  );
-}
-
 function App() {
   return (
-    <div className='h-full' >
+    <div className='h-full'>
       <Router>
-        <Switch>
-          <Route path="/pages" exact component={PagesRouters} />
-        </Switch>
+        <GlobalContextProvider>
+          <AudioProvider>
+            <Switch>
+              <Route path="/pages" component={PagesRouters} />
+              {/* 若有其他路由可以在此加入 */}
+            </Switch>
+          </AudioProvider>
+        </GlobalContextProvider>
       </Router>
     </div>
   );
 }
+
 
 export default App;

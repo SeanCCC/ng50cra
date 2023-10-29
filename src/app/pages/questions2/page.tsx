@@ -53,6 +53,78 @@ const AudioControl = ({ onFinish, actor }: any) => {
   );
 };
 
+const useSerialAnimation = (subtitleTimeline: number[]) => {
+	const textLine0 = useSpring({
+		from: { opacity: 0, transform: "translateY(1em)" },
+		to: { opacity: 1, transform: "translateY(0)" },
+		delay: subtitleTimeline[0],
+		config: { duration: 200 * 0 + 300, easing: easeCubicInOut }
+	});
+
+	const textLine1 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: subtitleTimeline[1],
+			config: { duration: 200 * 1 + 300, easing: easeCubicInOut }
+	});
+
+	const textLine2 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: subtitleTimeline[2],
+			config: { duration: 200 * 2 + 300, easing: easeCubicInOut }
+	});
+
+	const textLine3 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: subtitleTimeline[3],
+			config: { duration: 200 * 3 + 300, easing: easeCubicInOut }
+	});
+
+	const textLine4 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: subtitleTimeline[4],
+			config: { duration: 200 * 4 + 300, easing: easeCubicInOut }
+	});
+
+	const textLine5 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: subtitleTimeline[5],
+			config: { duration: 200 * 5 + 300, easing: easeCubicInOut }
+	});
+
+  const textLine6 = useSpring({
+    from: { opacity: 0, transform: "translateY(1em)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    delay: subtitleTimeline[6],
+    config: { duration: 200 * 6 + 300, easing: easeCubicInOut }
+  });
+
+  const textLine7 = useSpring({
+    from: { opacity: 0, transform: "translateY(1em)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    delay: subtitleTimeline[7],
+    config: { duration: 200 * 7 + 300, easing: easeCubicInOut }
+  });
+  const textLine8 = useSpring({
+    from: { opacity: 0, transform: "translateY(1em)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    delay: subtitleTimeline[8],
+    config: { duration: 200 * 8 + 300, easing: easeCubicInOut }
+  });
+  const textLine9 = useSpring({
+    from: { opacity: 0, transform: "translateY(1em)" },
+    to: { opacity: 1, transform: "translateY(0)" },
+    delay: subtitleTimeline[9],
+    config: { duration: 200 * 9 + 3000, easing: easeCubicInOut }
+  });
+	return [textLine0, textLine1, textLine2, textLine3, textLine4, textLine5, textLine6, textLine7, textLine8, textLine9]
+}
+
+
 const StoryComponent = () => {
   const router = useRouter();
   const { stage, setBgPlaying, firstSelected, secondSelected, thirdSelected } = useGlobalContext();
@@ -64,25 +136,22 @@ const StoryComponent = () => {
     setBgPlaying(false);
   }, [])
 
-  if(actor === null) return null;
 
-  const textLines= actor?.subtitle
+  const textLines= actor?.subtitle??[]
 
-  const textAnimations = textLines.map((_: any, index: any) => useSpring({
-    from: { opacity: 0},
-    to: { opacity: 1},
-    delay: actor?.subtitleTimeline[index], 
-    config: { duration: 200 * index + 300, easing: easeCubicInOut }
-  }));
+  const textAnimations = useSerialAnimation(actor?.subtitleTimeline??[])
+  
 
   const waveAnimation = useSpring({
     from: { opacity: 0},
     to: { opacity: 1},
     config: { duration: 400, easing: easeCubicInOut },
   })
+  if(actor === null) return null;
+
 
   return (
-      actor && <div className="flex flex-col w-100dvw h-100dvh pt-5">
+      actor && <div className="flex flex-col w-100dvw h-full pt-5">
         <BrandComponent active={stage}/>
         <FadedFragment
           className="flex flex-grow flex-col justify-between items-center pb-50"

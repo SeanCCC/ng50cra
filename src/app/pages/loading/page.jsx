@@ -21,7 +21,7 @@ export default function Loading() {
   }, [progress]);
 
   return (
-    <div className="flex h-100dvh flex-col items-center justify-center bg-black">
+    <div className="flex h-full flex-col items-center justify-center bg-black">
       <FadedFragment
         onNextPage={() => router.push('/pages/intro1')}
         fading={fading}

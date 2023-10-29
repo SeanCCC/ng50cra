@@ -26,7 +26,7 @@ export default function Intro1() {
 
 
   return (
-        <div className="flex-col self-stretch relative flex  px-5 py-10 justify-between w-100dvw h-100dvh">
+        <div className="flex-col self-stretch relative flex  px-5 py-10 justify-between w-100dvw h-full">
           <FadedFragment
             onNextPage={() => router.push('/pages/intro2')}
             fading={fading}

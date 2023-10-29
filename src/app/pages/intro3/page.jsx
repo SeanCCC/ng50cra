@@ -11,6 +11,51 @@ import { useRouter } from '@/hooks/useLocation';
 import FadedFragment  from "@/components/FadedFragment"
 import useAudioPlayer from "@/hooks/useAudioPlayer";
 
+const useSerialAnimation = () => {
+	const textLine1 = useSpring({
+		from: { opacity: 0, transform: "translateY(1em)" },
+		to: { opacity: 1, transform: "translateY(0)" },
+		delay: 400 + 400,
+		config: { duration: 400, easing: easeCubicInOut }
+	});
+
+	const textLine2 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: 400 * 2 + 400,
+			config: { duration: 400, easing: easeCubicInOut }
+	});
+
+	const textLine3 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: 400 * 3 + 400,
+			config: { duration: 400, easing: easeCubicInOut }
+	});
+
+	const textLine4 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: 400 * 4 + 400,
+			config: { duration: 400, easing: easeCubicInOut }
+	});
+
+	const textLine5 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: 400 * 5 + 400,
+			config: { duration: 400, easing: easeCubicInOut }
+	});
+
+	const textLine6 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: 400 * 6 + 400,
+			config: { duration: 400, easing: easeCubicInOut }
+	});
+	return [textLine1, textLine2, textLine3, textLine4, textLine5, textLine6]
+}
+
 const textLines = [
   "是構成電影的三大要素",
 	"",
@@ -38,12 +83,7 @@ function StoryComponent() {
     config: { duration: 500, easing: easeCubicInOut },
   });
 
-	const textAnimations = textLines.map((_, index) => useSpring({
-    from: { opacity: 0, transform: "translateY(1em)" },
-    to: { opacity: 1, transform: "translateY(0)" },
-    delay: 400 * index + 400, // 淡入间隔 0.4 秒
-    config: { duration: 400, easing: easeCubicInOut }
-  }));
+
 
 	const btnAnimations = useSpring({
     from: { opacity: 0, transform: "translateY(1em)" },
@@ -52,9 +92,11 @@ function StoryComponent() {
     config: { duration: 400, easing: easeCubicInOut }
   });
 
+	const textAnimations = useSerialAnimation()
+
 
   return (
-		<div  className="flex flex-col justify-between items-center w-100dvw h-100dvh pb-10 pt-10">
+		<div  className="flex flex-col justify-between items-center w-100dvw h-full pb-10 pt-10">
 			<animated.img
 				style={logoTitleAnimation}
 				loading="eager"
@@ -99,7 +141,7 @@ function StoryComponent() {
 					</animated.div>
 					<div className="text-center" style={innerTextStyle}>
 						{textLines.map((line, index) => (
-							<animated.div key={index} style={textAnimations[index]}>
+							<animated.div key={index} style={{...textAnimations[index], color: "#FFF"}}>
 								{line}
 								<br />
 							</animated.div>

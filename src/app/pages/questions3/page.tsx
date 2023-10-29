@@ -108,15 +108,15 @@ function StoryComponent() {
   if(stage === 1) {
     textLines = [".......他們在做什麼？"]
   }
-	const textAnimations = textLines.map((_, index) => useSpring({
+	const animation = useSpring({
     from: { opacity: 0},
     to: { opacity: 1},
-    delay: 200 * index, // 淡入间隔 0.4 秒
-    config: { duration: 200 * index + 300, easing: easeCubicInOut }
-  }));
+    delay: 0, // 淡入间隔 0.4 秒
+    config: { duration: 300, easing: easeCubicInOut }
+  })
 
   return (
-    <div className="flex flex-col w-100dvw h-100dvh pt-5 ">
+    <div className="flex flex-col w-100dvw h-full pt-5 ">
       <BrandComponent active={stage}/>
       <FadedFragment
         className="flex flex-col flex-grow justify-between items-center pb-50"
@@ -125,7 +125,7 @@ function StoryComponent() {
       >
         <div className="flex justify-center item-center h-full" style={textStyle}>
             {textLines.map((line, index) => (
-              <animated.div key={index} style={textAnimations[index]} className="flex text-center justify-center items-center">
+              <animated.div key={index} style={animation} className="flex text-center justify-center items-center">
                 {line}
                 <br />
               </animated.div>

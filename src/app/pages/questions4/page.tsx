@@ -87,7 +87,7 @@ const StoryComponent = () => {
 
 
   return (
-      actor && <div className="flex flex-col w-100dvw h-100dvh pt-5">
+      actor && <div className="flex flex-col w-100dvw h-full pt-5">
         <BrandComponent active={stage}/>
         <FadedFragment
           className="flex flex-grow flex-col justify-between items-center pb-50"

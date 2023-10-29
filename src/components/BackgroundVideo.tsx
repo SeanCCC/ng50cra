@@ -8,7 +8,7 @@ interface BackgroundVideoProps {
 
 const BackgroundVideo = ({ children, backgroundVideo, style }: BackgroundVideoProps) => {
   return (
-    <div className="relative w-100dvw h-100dvh" style={style}>
+    <div className="relative w-100dvw h-full" style={style}>
       {/* 基礎背景影片層 */}
       <div className="absolute w-full h-full">
         <video playsInline autoPlay muted loop className="w-full h-full object-cover">

@@ -11,17 +11,57 @@ import FadedFragment  from "@/components/FadedFragment"
 import useAudioPlayer from "@/hooks/useAudioPlayer";
 import { opening } from "@common/data"
 
+const useSerialAnimation = () => {
+	const textLine1 = useSpring({
+		from: { opacity: 0, transform: "translateY(1em)" },
+		to: { opacity: 1, transform: "translateY(0)" },
+		delay: opening.subtitleTimeline[0],
+		config: { duration: opening.subtitleTimeline[0] + 300, easing: easeCubicInOut }
+	});
+
+	const textLine2 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: opening.subtitleTimeline[1],
+			config: { duration: opening.subtitleTimeline[1] + 300, easing: easeCubicInOut }
+	});
+
+	const textLine3 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: opening.subtitleTimeline[2],
+			config: { duration: opening.subtitleTimeline[2] + 300, easing: easeCubicInOut }
+	});
+
+	const textLine4 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: opening.subtitleTimeline[3],
+			config: { duration: opening.subtitleTimeline[3] + 300, easing: easeCubicInOut }
+	});
+
+	const textLine5 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: opening.subtitleTimeline[4],
+			config: { duration: opening.subtitleTimeline[4] + 300, easing: easeCubicInOut }
+	});
+
+	const textLine6 = useSpring({
+			from: { opacity: 0, transform: "translateY(1em)" },
+			to: { opacity: 1, transform: "translateY(0)" },
+			delay: opening.subtitleTimeline[5],
+			config: { duration: opening.subtitleTimeline[5] + 300, easing: easeCubicInOut }
+	});
+	return [textLine1, textLine2, textLine3, textLine4, textLine5, textLine6]
+}
+
 
 function StoryComponent() {
   const router = useRouter();
   const [fading, setFading] = useState(false);
 
-	const textAnimations = opening.subtitle.map((_, index) => useSpring({
-    from: { opacity: 0},
-    to: { opacity: 1},
-    delay: opening.subtitleTimeline[index], // 淡入间隔 0.4 秒
-    config: { duration: opening.subtitleTimeline[index] + 300, easing: easeCubicInOut }
-  }));
+	const textAnimations = useSerialAnimation()
 
   const photoAnimation = useSpring({
     from: { opacity: 0, transform: 'translateY(20px)' },
@@ -44,7 +84,7 @@ function StoryComponent() {
    }, [])
 
   return (
-    <div className="flex flex-col justify-between items-center w-100dvw h-100dvh pb-10 pt-10">
+    <div className="flex flex-col justify-between items-center w-100dvw h-full pb-10 pt-10">
       <Image
         loading="eager"
         layout="intrinsic"

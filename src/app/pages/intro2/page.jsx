@@ -38,7 +38,7 @@ function StoryComponent() {
 				<FadedFragment
 					onNextPage={() => router.push('/pages/intro3')}
 					fading={fading}
-					className="flex flex-col justify-center items-center w-100dvw h-100dvh"
+					className="flex flex-col justify-center items-center w-100dvw h-full"
 				>
 					<Lottie
 						animationData={Intro2Logo}
