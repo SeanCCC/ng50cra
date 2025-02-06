@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAlEMMSzuXOi0pLwzznjvmxDt8pyQ17LWE",
+  apiKey: "xxx",
   authDomain: "golden-horse-awards.firebaseapp.com",
   projectId: "golden-horse-awards",
   storageBucket: "golden-horse-awards.appspot.com",
   messagingSenderId: "360062202754",
-  appId: "1:360062202754:web:701bff265afd888235959b"
+  appId: "xxx"
 };
 
 // Initialize Firebase
